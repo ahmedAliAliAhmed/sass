@@ -1,0 +1,134 @@
+
+  /* 1 varibles */
+$title-font : normal 24px/1.5 'open Sans', sans-serif;
+$cool-red:#F44336;
+$box-shadow-bottom-ony: 0 2px 1px 0 rgba(0, 0, 0, 0.2);
+
+  h1.title {
+	  
+	  font: $title-font;
+	  color: $cool-red;
+  }
+  
+  
+  div.container {
+	  
+	  color: $cool-red;
+	  background: #fff;
+	  width: 50%;
+	  box-shadow: $box-shadow-bottom-ony;
+	  
+  }
+  
+  
+    /* 2 mxin */
+	
+  @mixin square($size, $color) {
+  
+    width: $size;
+	height: $size;
+	background-color: $color;
+	}
+	
+	.small-blue-square {
+		
+		@include square(20px, #0041C2);
+		border: solid;
+		
+	}
+	
+	
+	.big-red-square {
+		
+		@include square(300px, red);
+		border:solid;
+		
+	}
+	
+	
+	  /* 3 extend */
+  
+     .dialog-button {
+		   
+		   box-sizing: border-box;
+		   color: #ffffff;
+		   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.12);
+		   padding: 12px 40px;
+		   margin: 20px;
+		   corsor: pointer;
+	 }
+	 
+	 .confirm {
+		 
+		 @extend .dialog-button;
+		 background-color: #87bae1;
+		 float: left;
+	 }
+	 
+	 
+	 .cancel {
+		 
+		 @extend .dialog-button;
+		 background-color: #e4749e;
+		 float: right;
+		 
+	 }
+	 
+	  /* 4 Nesting */
+	  
+	      ul {
+			   list-style: none;
+			   
+			   li {
+				    padding: 15px;
+					display: inline-block;
+					
+					a {
+						text-decoration: none;
+						font-size: 16px;
+						color: #444;
+					}
+			      }
+		      }
+			  
+			  
+			  /* 5 Operation */
+			  
+			  $width: 800px;
+			   
+			  
+			  .contain {
+				  width: $width;
+				  background-color: black;
+			  }
+			  
+			  .column-half {
+				  width: $width / 2;
+				   background-color: black;
+				  
+			  }
+			  
+			  .column-fifth{
+				  width: $width / 5;
+				   background-color: black;
+				  
+			  }
+			  
+			  
+			  /* 6 Function */
+			  
+			    $awesome-blue: #2196F3;
+				
+				.function {
+					
+				a{ 
+				padding: 10px 15px;
+				margin: 100px;
+				background-color: $awesome-blue;
+			    }
+				
+				a:hover {
+					background-color: darken($awesome-blue,10%);
+				}
+				
+				}
